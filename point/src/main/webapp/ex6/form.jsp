@@ -3,13 +3,16 @@
 <%
     MemberVO member = (MemberVO) request.getAttribute("member");
     boolean isEdit = (member != null);
+
     String title = isEdit ? "회원 수정" : "회원 등록";
     String action = isEdit ? "update" : "insert";
+
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title><%= title %></title>
 <style>
   body { font-family: sans-serif; padding: 20px; }

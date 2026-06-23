@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>회원 상세 정보</title>
 <style>
   body { font-family: sans-serif; padding: 20px; }
@@ -20,13 +21,16 @@
 </head>
 <body>
 <h2>회원 상세 정보</h2>
+
 <%
     MemberVO member = (MemberVO) request.getAttribute("member");
     if (member == null) {
 %>
+
   <p style="color:#c00; font-weight: bold;">회원 정보를 찾을 수 없습니다.</p>
   <br>
   <a class="btn btn-list" href="member">목록으로 돌아가기</a>
+
 <%
     } else {
 %>
@@ -38,12 +42,16 @@
   <tr><th>가입일</th><td><%= member.getRegDate() %></td></tr>
 </table>
 <br>
+
 <a class="btn btn-list" href="member">목록으로</a>
 <a class="btn btn-edit" href="member?action=edit&id=<%= member.getId() %>">수정</a>
+
 <a class="btn btn-del" href="member?action=delete&id=<%= member.getId() %>"
    onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a>
 <%
     }
 %>
 </body>
+
 </html>
+
